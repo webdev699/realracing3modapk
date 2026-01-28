@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://realracing3modapk.online/sitemap.xml
