@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://realracing3modapk.online/sitemap.xml
+Sitemap: https://realracing3modapk.site/sitemap.xml
