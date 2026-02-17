@@ -597,6 +597,134 @@ article {
     color: var(--text-primary);
 }
 
+/* Comparison Table */
+.comparison-table-container {
+    overflow-x: auto;
+    margin: 3rem 0;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.comparison-table th {
+    background: rgba(255, 255, 255, 0.05);
+    font-weight: 700;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.comparison-table tr:last-child td {
+    border-bottom: none;
+}
+
+.comparison-table .feature-col {
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.yes-icon {
+    color: #4ade80; /* Green */
+    font-weight: bold;
+}
+
+.no-icon {
+    color: #f87171; /* Red */
+    font-weight: bold;
+}
+
+/* System Requirements */
+.sys-req-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.sys-req-box {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.sys-req-box h3 {
+    color: var(--accent-gold);
+    margin-top: 0;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.req-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.req-list li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    border-bottom: 1px dashed var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.req-list li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.req-label {
+    color: var(--text-secondary);
+}
+
+.req-value {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* Trust Badges - Enhanced */
+.trust-badges-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.trust-badge i, .trust-badge span.icon {
+    color: var(--accent-gold);
+}
+
 /* Footer */
 footer {
     background-color: var(--bg-card);
