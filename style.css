@@ -116,6 +116,19 @@ a:hover {
     text-shadow: 0 0 10px var(--neon-cyan);
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gameplay-screenshot {
+    max-width: 800px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
 /* 2. Layout Utility */
 .container {
     max-width: var(--container-width);
