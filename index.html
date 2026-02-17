@@ -11,356 +11,6 @@
     <link rel="canonical" href="https://realracing3modapk.site/">
     <link rel="icon" type="image/icon" href="favicon.ico">
     <link rel="dns-prefetch" href="https://www.dropbox.com">
-    <style>
-        :root {
-            --bg-dark: #0a0a0a;
-            --bg-card: #141414;
-            --text-primary: #fff;
-            --text-secondary: #a0a0a0;
-            --accent-gold: #fbbf24;
-            --accent-gold-hover: #d97706;
-            --accent-purple: #8b5cf6;
-            --accent-pink: #ec4899;
-            --border-color: #2a2a2a;
-            --font-heading: 'Outfit', 'Roboto', sans-serif;
-            --font-body: 'Inter', sans-serif;
-            --spacing-container: 1200px
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-primary);
-            font-family: var(--font-body);
-            line-height: 1.6;
-            overflow-x: hidden
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-family: var(--font-heading);
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            font-weight: 700
-        }
-
-        .container {
-            max-width: var(--spacing-container);
-            margin: 0 auto;
-            padding: 0 1.5rem
-        }
-
-        header {
-            background-color: rgba(10, 10, 10, .95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            font-family: var(--font-heading);
-            color: var(--text-primary);
-            letter-spacing: -.02em
-        }
-
-        .logo span {
-            color: var(--accent-gold)
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none
-        }
-
-        .nav-links a {
-            align-items: center;
-            justify-content: center;
-            justify-items: center;
-            color: var(--text-secondary);
-            font-weight: 500;
-            font-size: .95rem;
-            text-decoration: none;
-            transition: color .3s ease
-        }
-
-        .nav-links a:hover {
-            color: var(--text-primary)
-        }
-
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            z-index: 1001
-        }
-
-        .menu-toggle span {
-            display: block;
-            width: 25px;
-            height: 2px;
-            background-color: var(--text-primary);
-            transition: .3s
-        }
-
-        @media (max-width:768px) {
-            .menu-toggle {
-                display: flex
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100vh;
-                background: rgba(10, 10, 10, .85);
-                backdrop-filter: blur(20px);
-                -webkit-backdrop-filter: blur(20px);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                transition: transform .4s cubic-bezier(.4, 0, .2, 1), opacity .4s ease;
-                z-index: 1000;
-                transform: translateY(-100%);
-                opacity: 0;
-                pointer-events: none
-            }
-
-            .nav-links.active {
-                transform: translateY(0);
-                opacity: 1;
-                pointer-events: all
-            }
-
-            .nav-links li {
-                margin: 2rem 0;
-                opacity: 0;
-                transform: translateY(20px);
-                transition: opacity .4s ease, transform .4s ease
-            }
-
-            .nav-links.active li:nth-child(1) {
-                transition-delay: .1s
-            }
-
-            .nav-links.active li:nth-child(2) {
-                transition-delay: .2s
-            }
-
-            .nav-links.active li:nth-child(3) {
-                transition-delay: .3s
-            }
-
-            .nav-links.active li {
-                opacity: 1;
-                transform: translateY(0)
-            }
-
-            .nav-links a {
-                font-size: 2rem;
-                font-weight: 800;
-                color: var(--text-primary);
-                text-transform: uppercase;
-                letter-spacing: .05em;
-                position: relative
-            }
-
-            .nav-links a::after {
-                content: '';
-                position: absolute;
-                width: 0;
-                height: 2px;
-                bottom: -5px;
-                left: 50%;
-                background: var(--accent-gold);
-                transition: width .3s ease, left .3s ease
-            }
-
-            .nav-links a:hover::after {
-                width: 100%;
-                left: 0
-            }
-
-            .menu-toggle span {
-                transition: .3s cubic-bezier(.4, 0, .2, 1)
-            }
-
-            .menu-toggle.active span:nth-child(1) {
-                transform: translateY(7px) rotate(45deg);
-                background-color: var(--accent-gold)
-            }
-
-            .menu-toggle.active span:nth-child(2) {
-                opacity: 0
-            }
-
-            .menu-toggle.active span:nth-child(3) {
-                transform: translateY(-7px) rotate(-45deg);
-                background-color: var(--accent-gold)
-            }
-        }
-
-        .hero {
-            min-height: 100vh;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 100px 1.5rem;
-            position: relative;
-            overflow: hidden
-        }
-
-        .hero-home {
-            background: radial-gradient(circle at 70% 30%, rgba(139, 92, 246, .15) 0%, transparent 50%), radial-gradient(circle at 30% 70%, rgba(236, 72, 153, .1) 0%, transparent 50%), linear-gradient(180deg, rgba(139, 92, 246, .05) 0%, rgba(10, 10, 10, 1) 100%)
-        }
-
-        .hero-home::before {
-            content: '';
-            position: absolute;
-            top: -10%;
-            right: -10%;
-            width: 400px;
-            height: 400px;
-            background: var(--accent-purple);
-            filter: blur(150px);
-            opacity: .2;
-            z-index: -1
-        }
-
-        .hero-home h1 {
-            background: linear-gradient(to right, #fff, var(--accent-purple), var(--accent-pink));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent
-        }
-
-        .hero-home .btn-download {
-            margin-top: 50px;
-            padding: 20px 40px;
-            background: linear-gradient(45deg, var(--accent-purple), var(--accent-pink));
-            color: white;
-            box-shadow: 0 4px 20px rgba(139, 92, 246, .4)
-        }
-
-        .hero-home .btn-download:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(139, 92, 246, .5)
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px)
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0)
-            }
-        }
-
-        .hero .hero-stats,
-        .hero .btn-download {
-            animation: fadeInUp .8s ease-out forwards;
-            will-change: transform, opacity
-        }
-
-        .hero .hero-stats {
-            animation-delay: .4s;
-            opacity: 0
-        }
-
-        .hero .btn-download {
-            animation-delay: .6s;
-            opacity: 0
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 2rem;
-            margin: 2rem 0;
-            justify-content: center;
-            flex-wrap: wrap
-        }
-        .trust-badges-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
-    margin: 2rem 0;
-}
-.trust-badge {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--text-primary);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.trust-badge i, .trust-badge span.icon {
-    color: var(--accent-gold);
-}
-
-
-
-        .stat-item {
-            display: flex;
-            align-items: center;
-            gap: .75rem;
-            background: rgba(255, 255, 255, .05);
-            padding: .75rem 1.25rem;
-            border-radius: 50px;
-            border: 1px solid rgba(255, 255, 255, .1);
-            transition: transform .3s ease, border-color .3s ease
-        }
-
-        .stat-item:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-gold)
-        }
-
-        .stat-icon {
-            font-size: 1.25rem
-        }
-
-        .btn-download {
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            transition: transform .3s ease, box-shadow .3s ease
-        }
-    </style>
     <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
     <noscript>
         <link rel="stylesheet" href="style.css">
@@ -525,7 +175,9 @@
                     </div>
                     <div class="tech-spec-item">
                         <span class="tech-spec-label">Developer</span>
-                        <span class="tech-spec-value"><a href="https://www.ea.com/ea-studios/firemonkeys" rel="noopener nofollow noreferer" style="color: rgb(62, 129, 173);" target="_blank">Firemonkeys Studios / EA</a></span>
+                        <span class="tech-spec-value"><a href="https://www.ea.com/ea-studios/firemonkeys"
+                                rel="noopener nofollow noreferer" style="color: var(--neon-cyan);"
+                                target="_blank">Firemonkeys Studios / EA</a></span>
                     </div>
                     <div class="tech-spec-item">
                         <span class="tech-spec-label">Android</span>
@@ -537,7 +189,7 @@
                     </div>
                     <div class="tech-spec-item" style="grid-column: span 2;">
                         <span class="tech-spec-label">MOD Features</span>
-                        <span class="tech-spec-value" style="color: var(--accent-gold);">Unlimited Money, Gold, All
+                        <span class="tech-spec-value" style="color: var(--neon-yellow);">Unlimited Money, Gold, All
                             Cars</span>
                     </div>
                 </div>
@@ -630,6 +282,12 @@
                     <li><strong>Dynamic Conditions:</strong> Race at different times of day, including night racing and
                         dusk, which affect visibility and track temperature.</li>
                 </ul>
+                <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
+                    <img src="./Real Racing 3 MOD APK gameplay.webp" alt="Real Racing 3 MOD APK gameplay screenshot"
+                        style="width: 800px; ">
+                    <img src="./Real Racing 3 MOD APK gameplay screenshot.webp"
+                        alt="Real Racing 3 MOD APK gameplay screenshot" style="width: 800px;">
+                </div>
             </section>
 
             <section id="cars-tracks">
@@ -710,7 +368,7 @@
                     <li><strong>Launch & Play:</strong> Once data download finishes, the game will start with unlimited
                         money and gold unlocked!</li>
                 </ol>
-                <div class="info-box" style="border-left: 4px solid var(--accent-purple);">
+                <div class="info-box" style="border-left: 4px solid var(--neon-purple);">
                     <p><strong>Troubleshooting:</strong> If you get an "App key not active" or "Parsing Error",
                         uninstall any previous version of the game before installing this mod.</p>
                 </div>
@@ -853,7 +511,7 @@
                         However, for the best support and online experience, we recommend supporting the developers by
                         playing the official version if possible.</li>
                 </ul>
-                <div class="info-box" style="border-left: 4px solid var(--accent-orange);">
+                <div class="info-box" style="border-left: 4px solid var(--neon-pink);">
                     <p><strong>Account Risk Note:</strong> To be 100% safe from bans, play mostly in <strong>Offline
                             Mode</strong> or do not sign in to your main Facebook/Google account.</p>
                 </div>
@@ -905,11 +563,22 @@
                 </p>
             </section>
 
-            <div class="info-box" style="margin-top: 4rem; border-left: 4px solid var(--accent-gold);">
+            <div class="info-box" style="margin-top: 4rem; border-left: 4px solid var(--neon-yellow);">
                 <h4>Editorial Note</h4>
                 <p>This content was updated to reflect version 14.0.1 and the 2026 download guide. We strive to provide
                     accurate, balanced information for educational and entertainment purposes.</p>
             </div>
+
+            <section id="more-games" style="margin-top: 3rem;">
+                <h3>Check Out Other Mods</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="https://hungrysharkevolutionmod.com/" target="_blank" rel="dofollow">hungry shark
+                            evolution hack apk</a></li>
+                    <li><a href="https://hungrysharkevolutionmod.com/hungry-shark-evolution-mod-apk-for-ios/"
+                            target="_blank" rel="dofollow">hungry shark evolution hack ios</a></li>
+                    <li><a href="https://sgproapk.com/" target="_blank" rel="dofollow">stumble guys hack apk</a></li>
+                </ul>
+            </section>
 
         </article>
     </main>
